@@ -5,10 +5,10 @@
 package main
 
 import (
-	"github.com/golang/protobuf/proto"
 	"crypto/aes"
 	"crypto/tls"
 	"fmt"
+	"github.com/golang/protobuf/proto"
 	"github.com/tweenagedream/grumble/pkg/acl"
 	"github.com/tweenagedream/grumble/pkg/ban"
 	"github.com/tweenagedream/grumble/pkg/freezer"

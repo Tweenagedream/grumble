@@ -5,16 +5,16 @@
 package main
 
 import (
-	"github.com/golang/protobuf/proto"
 	"errors"
-	"io"
-	"io/ioutil"
-	"log"
+	"github.com/golang/protobuf/proto"
 	"github.com/tweenagedream/grumble/pkg/acl"
 	"github.com/tweenagedream/grumble/pkg/ban"
 	"github.com/tweenagedream/grumble/pkg/freezer"
 	"github.com/tweenagedream/grumble/pkg/mumbleproto"
 	"github.com/tweenagedream/grumble/pkg/serverconf"
+	"io"
+	"io/ioutil"
+	"log"
 	"os"
 	"path/filepath"
 	"strconv"

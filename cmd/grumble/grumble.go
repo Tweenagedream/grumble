@@ -7,9 +7,9 @@ package main
 import (
 	"flag"
 	"fmt"
-	"log"
 	"github.com/tweenagedream/grumble/pkg/blobstore"
 	"github.com/tweenagedream/grumble/pkg/logtarget"
+	"log"
 	"os"
 	"path/filepath"
 	"regexp"
