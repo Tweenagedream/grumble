@@ -7,6 +7,7 @@ package replacefile
 import (
 	"unsafe"
 	"syscall"
+	"os"
 )
 
 var (
@@ -43,6 +44,16 @@ func replaceFileW(replaced *uint16, replacement *uint16, backup *uint16, flags u
 // ReplaceFile calls through to the Win32 ReplaceFile API, which can be found at the following
 // URL: http://msdn.microsoft.com/en-us/library/windows/desktop/aa365512(v=vs.85).aspx
 func ReplaceFile(replaced string, replacement string, backup string, flags Flag) error {
+	_, err := os.Stat(replaced)
+	if err != nil {
+		if os.IsNotExist(err) {
+			f, err := os.Create(replaced)
+			if err != nil{
+				return err
+			}
+			f.Close()
+		}
+	}
 	replacedPtr, err := syscall.UTF16PtrFromString(replaced)
 	if err != nil {
 		return err

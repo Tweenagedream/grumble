@@ -5,16 +5,16 @@
 package main
 
 import (
-	"code.google.com/p/goprotobuf/proto"
+	"github.com/golang/protobuf/proto"
 	"errors"
 	"io"
 	"io/ioutil"
 	"log"
-	"mumble.info/grumble/pkg/acl"
-	"mumble.info/grumble/pkg/ban"
-	"mumble.info/grumble/pkg/freezer"
-	"mumble.info/grumble/pkg/mumbleproto"
-	"mumble.info/grumble/pkg/serverconf"
+	"github.com/tweenagedream/grumble/pkg/acl"
+	"github.com/tweenagedream/grumble/pkg/ban"
+	"github.com/tweenagedream/grumble/pkg/freezer"
+	"github.com/tweenagedream/grumble/pkg/mumbleproto"
+	"github.com/tweenagedream/grumble/pkg/serverconf"
 	"os"
 	"path/filepath"
 	"strconv"

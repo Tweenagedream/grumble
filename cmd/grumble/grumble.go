@@ -8,8 +8,8 @@ import (
 	"flag"
 	"fmt"
 	"log"
-	"mumble.info/grumble/pkg/blobstore"
-	"mumble.info/grumble/pkg/logtarget"
+	"github.com/tweenagedream/grumble/pkg/blobstore"
+	"github.com/tweenagedream/grumble/pkg/logtarget"
 	"os"
 	"path/filepath"
 	"regexp"
@@ -28,6 +28,13 @@ func main() {
 	}
 
 	// Open the data dir to check whether it exists.
+	_, err = os.Stat(Args.DataDir)
+	if err != nil {
+		if os.IsNotExist(err) {
+			fmt.Printf("data directory directory does not exist, creating %s\n", Args.DataDir)
+			os.Mkdir(Args.DataDir, 740)
+		}
+	}
 	dataDir, err := os.Open(Args.DataDir)
 	if err != nil {
 		log.Fatalf("Unable to open data directory: %v", err)
